@@ -9,10 +9,13 @@ jobs:
   deploy:
 
     runs-on: ubuntu-latest
+    
+  steps:
+  - uses: actions/checkout@v4
+  - run: docker build . -t chandan27071989/next-js-app
+  - >-
+    echo "dckr_pat_efAcfkI25Mz5dD00TmuQnh-umYQ" | docker login -u
+    chandan27071989 --password-stdin
+  - run: 'docker push chandan27071989/next-js-app:latest'
 
-
-    steps:
-    - uses: actions/checkout@v4
-    - run: docker build . -t chandan27071989/next-js-app
-    - echo "dckr_pat_efAcfkI25Mz5dD00TmuQnh-umYQ" | docker login -u chandan27071989 --password-stdin
-    - run: docker push chandan27071989/next-js-app:latest
+      
