@@ -14,5 +14,4 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - run: docker build . -t chandan27071989/next-js-app
-    - run: echo "${{secrets.DOCKERHUB_PASSWORD}}" | docker login -u ${{secrets.DOCKERHUB_USERNAME}} --password-stdin 
-    - run: docker push harishneel/next-js-app:latest
+    - echo "dckr_pat_efAcfkI25Mz5dD00TmuQnh-umYQ" | docker login -u chandan27071989 --password-stdin
